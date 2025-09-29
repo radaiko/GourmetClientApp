@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GourmetClientApp.Views.MenuOrderPage"
+             Title="Gourmet Client - Menu Orders">
+    
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Center">
+            
+            <Label 
+                x:Name="WelcomeLabel"
+                Text="Welcome to Gourmet Client"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label 
+                x:Name="SubLabel"
+                Text="Cross-platform food ordering made simple"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Button 
+                x:Name="RefreshMenuBtn"
+                Text="Refresh Menu"
+                SemanticProperties.Hint="Refreshes the available menu items"
+                Clicked="OnRefreshMenuClicked"
+                HorizontalOptions="Center" />
+
+            <Label x:Name="MenuStatusLabel"
+                   Text="No menus loaded yet"
+                   FontSize="16"
+                   HorizontalOptions="Center" />
+
+            <!-- Placeholder for menu items -->
+            <CollectionView x:Name="MenuCollectionView"
+                           ItemsSource="{Binding MenuItems}"
+                           IsVisible="False">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="{Binding MenuName}" FontAttributes="Bold" />
+                            <Label Grid.Row="1" Text="{Binding Description}" FontSize="12" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

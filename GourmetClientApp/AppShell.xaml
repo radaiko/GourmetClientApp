@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="GourmetClientApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:GourmetClientApp"
+    xmlns:views="clr-namespace:GourmetClientApp.Views"
+    Title="Gourmet Client">
+
+    <TabBar>
+        <ShellContent
+            Title="Menu Orders"
+            Icon="dotnet_bot.png"
+            ContentTemplate="{DataTemplate views:MenuOrderPage}"
+            Route="MenuOrderPage" />
+        
+        <ShellContent
+            Title="Settings"
+            Icon="dotnet_bot.png"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="Settings" />
+    </TabBar>
+
+</Shell>
