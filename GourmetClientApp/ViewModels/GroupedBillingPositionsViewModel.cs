@@ -1,6 +1,6 @@
-﻿using GourmetClient.Model;
+﻿using GourmetClientApp.Model;
 
-namespace GourmetClient.ViewModels;
+namespace GourmetClientApp.ViewModels;
 
 public record GroupedBillingPositionsViewModel(
     BillingPositionType PositionType,
